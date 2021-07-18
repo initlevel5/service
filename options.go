@@ -1,8 +1,8 @@
 package service
 
 import (
-    "github.com/initlevel5/service/v1/client"
-    "github.com/initlevel5/service/v1/server"
+    "github.com/initlevel5/service/client"
+    "github.com/initlevel5/service/server"
 )
 
 type Option func(*Options)

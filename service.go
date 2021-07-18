@@ -1,9 +1,9 @@
 package service
 
 import (
-    "github.com/initlevel5/service/v1/client"
-    "github.com/initlevel5/service/v1/logger"
-    "github.com/initlevel5/service/v1/server"
+    "github.com/initlevel5/service/client"
+    "github.com/initlevel5/service/logger"
+    "github.com/initlevel5/service/server"
 )
 
 type Service interface {

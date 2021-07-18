@@ -1,7 +1,3 @@
-module github.com/initlevel5/service/v1
+module github.com/initlevel5/service
 
 go 1.16
-
-requare ()
-
-replace github.com/initlevel5/service/v1 => ../service
