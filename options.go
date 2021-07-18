@@ -1,11 +1,11 @@
 package service
 
 import (
-    "github.com/initlevel5/service/client"
-    "github.com/initlevel5/service/server"
+    "github.com/initlevel5/service/v1/client"
+    "github.com/initlevel5/service/v1/server"
 )
 
-type Option func(o *Options)
+type Option func(*Options)
 
 type Options struct {
     Client client.Client
