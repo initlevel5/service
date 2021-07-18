@@ -1,14 +1,18 @@
 package server
 
 type Server interface {
-    Init(...Option)
+    Init(...Option) error
     Run() error
     Options() Options
 }
 
-type Option func(*Options)
+var (
+    DefaultServer Server = newJRpcServer()
+)
 
-func Init(opts ...Option) {}
+func Init(opts ...Option) error {
+    return nil
+}
 
 func Run() error {
     return nil

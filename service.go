@@ -1,8 +1,9 @@
 package service
 
 import (
+    "log"
+
     "github.com/initlevel5/service/client"
-    "github.com/initlevel5/service/logger"
     "github.com/initlevel5/service/server"
 )
 
@@ -14,17 +15,18 @@ type Service interface {
     Server() server.Server
 }
 
-func NewService(opts ...Option) Service {
-    return newService(opts...)
+func NewService(logger *log.Logger, opts ...Option) Service {
+    return newService(logger, opts...)
 }
 
 type service struct {
     opts Options
+    *log.Logger
 }
 
-func newService(opts ...Option) Service {
+func newService(logger *log.Logger, opts ...Option) Service {
     service := new(service)
-    options := newOptions(opts...)
+    options := NewOptions(opts...)
 
     err := options.Server.Init()
 
@@ -33,6 +35,7 @@ func newService(opts ...Option) Service {
     }
 
     service.opts = options
+    service.Logger = logger
 
     return service
 }

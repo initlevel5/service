@@ -1,10 +1,12 @@
 package client
 
 type Client interface {
-    Init(...Option)
+    Init(...Option) error
     Options() Options
 }
 
-type Option func(*Options)
+var (
+    DefaultClient Client = newJRpcClient()
+)
 
 func Init(opts ...Option) {}
